@@ -5,5 +5,5 @@ A javascript simulator for the three sided coin experiment proposed by Matt Park
 - [x] Simulation code
 - [x] Get results
 - [ ] Compute statistics
-- [ ] Fancy interface
+- [x] Fancy interface
 

@@ -1,3 +1,5 @@
+var events = new EventEmitter()
+
 
 function getResult(z){
     err = 0.3

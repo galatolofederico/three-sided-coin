@@ -2,14 +2,71 @@
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/91/three.js"></script>
+        <script src="eventemitter.js"></script>
         <script src="util.js"></script>
-        <script src="app.js"></script>
-        <title>TODO</title>
+        <script src="simulation.js"></script>
+        <title>Three sided coin simulator</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+        <link href="app.css" rel="stylesheet">
     </head>
     <body>
-        <script>
-            init();
-            animate();
-        </script>
+        <div class="setup">
+            <h2 style="text-align: center">Three sided coin simulator</h2>
+            <form>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="ratio">Ratio</label>
+                        <input id="ratio" type="text" class="form-control" value="1">
+                    </div>
+                    <div class="col">
+                        <label for="coins">Coins</label>
+                        <input id="coins" type="text" class="form-control" value="100">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="time">Total time (s)</label>
+                        <input id="time" type="text" class="form-control" value="10">
+                    </div>
+                    <div class="col">
+                            <label for="step">Step time (s)</label>
+                            <input id="step" type="text" class="form-control" value="1/60">
+                    </div>
+                </div>
+                <div class="form-row text-center" style="margin-top: 20px">
+                    <div class="col">
+                        <button type="button" class="btn" id="run">Run</button>
+                    </div>
+                </div>
+            </form>
+            <div class="progress">
+                <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            </div>
+        </div>
+      </div>
+        <div id="simulation" class="simulation"></div>
+
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Results</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="modaldiv">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
